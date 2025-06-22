@@ -121,6 +121,7 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .btn {
@@ -166,6 +167,256 @@
 
         .btn-add-cart:hover {
             background: #219a52;
+        }
+
+        /* Profile Modal Styles */
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .profile-stat {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .profile-stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .profile-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Order History */
+        .order-history {
+            margin-top: 2rem;
+        }
+
+        .order-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .order-status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .order-status.completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .order-status.processing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .order-status.shipped {
+            background: #cce5ff;
+            color: #0066cc;
+        }
+
+        .order-status.delivered {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .order-products {
+            margin-top: 0.5rem;
+            color: #666;
+        }
+
+        .order-total {
+            font-weight: bold;
+            color: #27ae60;
+            margin-top: 0.5rem;
+        }
+
+        .order-resi {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Order Detail Modal */
+        .order-detail-modal .modal-content {
+            max-width: 900px;
+        }
+
+        .order-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .order-detail-info {
+            margin-bottom: 2rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        /* Tracking Timeline */
+        .tracking-timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 35px;
+            bottom: -20px;
+            width: 2px;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .timeline-item.active::after {
+            background: #27ae60;
+        }
+
+        .timeline-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            z-index: 2;
+            position: relative;
+            background: #ddd;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .timeline-icon.active {
+            background: #27ae60;
+        }
+
+        .timeline-icon.current {
+            background: #1e3c72;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* Shipping Info */
+        .shipping-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .shipping-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .estimate-delivery {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #007bff;
+        }
+
+        .estimate-title {
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .estimate-date {
+            font-size: 1.1rem;
+            color: #333;
         }
 
         /* Modal Styles */
@@ -913,6 +1164,20 @@
             .product-main-image {
                 height: 300px;
             }
+
+            .order-detail-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-icon {
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -1014,6 +1279,22 @@
                     <label class="form-label">Nomor Telepon</label>
                     <input type="tel" class="form-input" id="phone" placeholder="08xxxxxxxxxx" required>
                 </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Pilih Kurir</label>
+                    <select class="form-input" id="shippingMethod" required>
+                        <option value="" disabled selected>Pilih metode pengiriman</option>
+                        <option value="jne">JNE - Reguler (Rp 25.000) - 2-3 hari</option>
+                        <option value="jnt">J&T - Express (Rp 30.000) - 1-2 hari</option>
+                        <option value="sicepat">SiCepat - Same Day (Rp 50.000) - 1 hari</option>
+                        <option value="pos">POS Indonesia - Kilat (Rp 20.000) - 3-5 hari</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Catatan Pengiriman (Opsional)</label>
+                    <textarea class="form-input" id="shippingNotes" rows="2" placeholder="Contoh: Tinggal di depan warung biru"></textarea>
+                </div>
             </div>
 
             <!-- Payment Method -->
@@ -1057,7 +1338,7 @@
                 </div>
             </div>
 
-            <!-- Credit Card Details (Hidden by default) -->
+            <!-- Credit Card Details -->
             <div id="creditCardDetails" class="payment-section" style="display: none;">
                 <h4 class="payment-title">💳 Detail Kartu Kredit</h4>
                 <div class="form-group">
@@ -1089,6 +1370,192 @@
     </div>
 </div>
 
+<!-- Profile Modal -->
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('profileModal')">&times;</button>
+        <div class="modal-header">
+            <h3 class="modal-title">👤 Profil Saya</h3>
+            <p class="modal-subtitle">Kelola informasi profil dan riwayat pesanan</p>
+        </div>
+        
+        <div class="profile-stats">
+            <div class="profile-stat">
+                <div class="profile-stat-value" id="totalOrders">0</div>
+                <div class="profile-stat-label">Total Pesanan</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-value" id="totalSpent">Rp 0</div>
+                <div class="profile-stat-label">Total Belanja</div>
+            </div>
+        </div>
+        
+        <form id="profileForm">
+            <div class="form-group">
+                <label class="form-label">Foto Profil</label>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="user-avatar" id="profileAvatar" style="width: 60px; height: 60px; font-size: 1.5rem;">JD</div>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('avatarUpload').click()" style="padding: 0.5rem 1rem;">
+                        Ubah Foto
+                    </button>
+                    <input type="file" id="avatarUpload" accept="image/*" style="display: none;" onchange="handleAvatarUpload(event)">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-input" id="profileName" placeholder="Masukkan nama lengkap" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" id="profileEmail" placeholder="contoh@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Nomor Telepon</label>
+                <input type="tel" class="form-input" id="profilePhone" placeholder="08xxxxxxxxxx">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Alamat</label>
+                <textarea class="form-input" id="profileAddress" rows="3" placeholder="Alamat lengkap pengiriman"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Jenis Kelamin</label>
+                <div style="display: flex; gap: 1rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="radio" name="gender" value="male" checked> Laki-laki
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="radio" name="gender" value="female"> Perempuan
+                    </label>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan Perubahan</button>
+                <div class="modal-switch">
+                    <a href="#" onclick="showChangePassword()">Ubah Password</a>
+                </div>
+            </div>
+        </form>
+
+        <!-- Order History Section -->
+        <div class="order-history">
+            <h3 style="margin-bottom: 1rem; color: #1e3c72;">📦 Riwayat Pesanan</h3>
+            <div id="orderHistoryContainer">
+                <div style="text-align: center; padding: 2rem; color: #666;">
+                    Belum ada pesanan
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Order Detail Modal -->
+<div id="orderDetailModal" class="modal order-detail-modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('orderDetailModal')">&times;</button>
+        
+        <div class="order-detail-header">
+            <div>
+                <h3 class="modal-title">📦 Detail Pesanan</h3>
+                <p class="modal-subtitle" id="orderDetailSubtitle">Informasi lengkap pesanan Anda</p>
+            </div>
+            <div class="order-status" id="orderDetailStatus">Processing</div>
+        </div>
+
+        <div class="order-detail-info">
+            <div class="info-row">
+                <span class="info-label">No. Pesanan:</span>
+                <span id="orderDetailId">#12345</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Tanggal Pesanan:</span>
+                <span id="orderDetailDate">22 Juni 2025</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">No. Resi:</span>
+                <span id="orderDetailResi">JNE123456789</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Total Pembayaran:</span>
+                <span id="orderDetailTotal" style="color: #27ae60; font-weight: bold;">Rp 0</span>
+            </div>
+        </div>
+
+        <!-- Shipping Info -->
+        <div class="shipping-info">
+            <h4 class="shipping-title">🚚 Informasi Pengiriman</h4>
+            <div class="estimate-delivery">
+                <div class="estimate-title">Estimasi Tiba:</div>
+                <div class="estimate-date" id="estimateDate">24 Juni 2025</div>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Kurir:</span>
+                <span id="shippingCourier">JNE Regular</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Alamat:</span>
+                <span id="shippingAddress">Alamat pengiriman</span>
+            </div>
+        </div>
+
+        <!-- Tracking Timeline -->
+        <div class="tracking-timeline">
+            <h4 style="margin-bottom: 1.5rem; color: #1e3c72;">📍 Lacak Pengiriman</h4>
+            <div id="trackingTimelineContainer">
+                <!-- Timeline items will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="order-summary">
+            <h4 style="margin-bottom: 1rem; color: #1e3c72;">📋 Barang Pesanan</h4>
+            <div id="orderDetailItems">
+                <!-- Order items will be inserted here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Change Password Modal -->
+<div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('passwordModal')">&times;</button>
+        <div class="modal-header">
+            <h3 class="modal-title">🔒 Ubah Password</h3>
+            <p class="modal-subtitle">Masukkan password lama dan baru</p>
+        </div>
+        
+        <form id="passwordForm">
+            <div class="form-group">
+                <label class="form-label">Password Lama</label>
+                <input type="password" class="form-input" id="oldPassword" placeholder="Masukkan password lama" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Password Baru</label>
+                <input type="password" class="form-input" id="newPassword" placeholder="Masukkan password baru" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Konfirmasi Password Baru</label>
+                <input type="password" class="form-input" id="confirmNewPassword" placeholder="Ulangi password baru" required>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan Password</button>
+                <div class="modal-switch">
+                    <a href="#" onclick="showProfile()">Kembali ke Profil</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <header>
     <nav class="container">
         <div class="logo">FishingPro Store</div>
@@ -1097,7 +1564,6 @@
             <li><a href="#joran" class="nav-link">Joran</a></li>
             <li><a href="#reel" class="nav-link">Reel</a></li>
             <li><a href="#aksesoris" class="nav-link">Aksesoris</a></li>
-            <li><a href="#promo" class="nav-link">Promo</a></li>
         </ul>
         <div class="cart-section">
             <div class="cart-icon" onclick="switchTab('cart')">
@@ -1221,6 +1687,10 @@
                     <span>Ongkir:</span>
                     <span id="cartShipping">Rp 25.000</span>
                 </div>
+                <div class="total-row" id="shippingMethodContainer" style="display: none;">
+                    <span>Metode:</span>
+                    <span id="cartShippingMethod">JNE Reguler (2-3 hari)</span>
+                </div>
                 <div class="total-row" id="cartDiscountRow" style="display: none;">
                     <span>Diskon:</span>
                     <span id="cartDiscount">-Rp 0</span>
@@ -1250,14 +1720,13 @@ const products = {
     beranda: [
         {
             id: 'p1',
-            emoji: '🎣',
             brand: 'Shimano',
             title: 'Shimano BeastMaster',
             description: 'Reel elektrik terbaik untuk laut dalam dengan teknologi terkini',
             fullDescription: 'Shimano BeastMaster adalah reel elektrik terbaik di kelasnya dengan teknologi canggih untuk mancing laut dalam. Dilengkapi dengan sistem drag yang halus dan kuat, serta baterai tahan lama untuk sesi mancing yang panjang.',
             price: 15000000,
             rating: '⭐⭐⭐⭐⭐ 4.9/5 (220 review)',
-            images: ['🎣', '⚙️', '🔋', '🌊'],
+            images: ['https://www.tsourosmarine.gr/56450-thickbox_default/shimano-beastmaster-9000-electric-reel.jpg', 'https://th.bing.com/th/id/OIP.Dpz3sZiejx3iagYjMWtzHAHaHa?w=962&h=962&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://m.media-amazon.com/images/I/618audQ+gML.jpg', 'https://cdn11.bigcommerce.com/s-55834/images/stencil/1280x1280/products/1431/21085/shimano-beastmaster-electric-reel-handle-view__87650.1706140852.jpg?c=2'],
             specs: {
                 category: 'Reel Elektrik',
                 material: 'Aluminium Grade',
@@ -1268,14 +1737,13 @@ const products = {
         },
         {
             id: 'p2',
-            emoji: '🪝',
-            brand: 'Maguro',
-            title: 'Maguro Extreme',
-            description: 'Joran super kuat untuk laut dan sungai',
-            fullDescription: 'Joran Maguro Extreme dirancang khusus untuk menghadapi ikan-ikan besar di laut maupun sungai. Terbuat dari bahan carbon fiber berkualitas tinggi dengan kekuatan maksimal namun tetap ringan.',
-            price: 850000,
+            brand: 'Shimano',
+            title: 'Shimano Taigra',
+            description: 'Joran Trolling super kuat untuk laut dalam',
+            fullDescription: 'Joran Shimano Taigra dirancang khusus untuk menghadapi ikan-ikan besar di laut dalam. Terbuat dari bahan carbon fiber berkualitas tinggi dengan kekuatan maksimal.',
+            price: 18500000,
             rating: '⭐⭐⭐⭐ 4.7/5 (180 review)',
-            images: ['🪝', '🎣', '🌊', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.84iUXnfVNaI1W0JwL1kJCAHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://www.gerrysfishing.com/wp-content/uploads/2023/01/image383134700.jpg', 'https://th.bing.com/th/id/OIP.TKl4C-jOutS6-AFUqgh4rwHaHa?w=2560&h=2560&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://th.bing.com/th/id/OIP.zgRZadziKgiPlTe_ryt6rwHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Joran',
                 material: 'Carbon Fiber',
@@ -1286,14 +1754,13 @@ const products = {
         },
         {
             id: 'p3',
-            emoji: '🎒',
             brand: 'Rapala',
             title: 'Tas Pancing Waterproof',
             description: 'Kapasitas besar, bahan anti air dan ringan',
             fullDescription: 'Tas pancing Rapala ini didesain khusus untuk para angler profesional. Dengan bahan waterproof dan kompartemen yang banyak, semua peralatan mancing Anda akan terlindungi dengan baik.',
             price: 480000,
             rating: '⭐⭐⭐⭐ 4.6/5 (97 review)',
-            images: ['🎒', '🛡️', '🧰', '🎣'],
+            images: ['https://www.hookedonline.com.au/assets/full/46002-1.jpg?20211110164410', 'https://th.bing.com/th/id/OIP.ULWasyKvtLe6_LrpIFSdtwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://www.rapala.eu/img/940/940/resize/catalog/product/5/d/5dba8jskg54ep478u2fiqtin50_b64fb6bf.png', 'https://th.bing.com/th/id/OIP.ItPtyPKrqCN5T8jK0qHg-wHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Aksesoris',
                 material: 'Nylon Waterproof',
@@ -1304,14 +1771,14 @@ const products = {
         },
         {
             id: 'p4',
-            emoji: '🎏',
+            
             brand: 'Daiwa',
             title: 'Daiwa Saltiga',
             description: 'Joran kelas premium untuk mancing laut',
             fullDescription: 'Daiwa Saltiga adalah joran premium dengan sensitivitas tinggi dan kekuatan maksimal. Cocok untuk teknik casting maupun jigging di laut dengan ikan-ikan besar.',
             price: 1250000,
             rating: '⭐⭐⭐⭐⭐ 4.9/5 (150 review)',
-            images: ['🎏', '🌊', '🎣', '🐠'],
+            images: ['https://cdn.shopify.com/s/files/1/0711/3103/7995/products/saltiga-spin.jpg?v=1680631491&width=1445', 'https://discounttackle.com/cdn/shop/products/saltiga-spin-main_2260x1400.png?v=1631306299'],
             specs: {
                 category: 'Joran',
                 material: 'High Modulus Carbon',
@@ -1322,14 +1789,13 @@ const products = {
         },
         {
             id: 'p5',
-            emoji: '🎐',
             brand: 'Shimano',
             title: 'Shimano Talavera',
             description: 'Joran spinning ringan untuk pemula',
             fullDescription: 'Shimano Talavera adalah pilihan tepat untuk pemula yang ingin belajar teknik spinning. Ringan dan seimbang dengan harga terjangkau namun kualitas Shimano.',
-            price: 650000,
+            price: 1650000,
             rating: '⭐⭐⭐⭐ 4.5/5 (210 review)',
-            images: ['🎐', '🎣', '🌀', '🐡'],
+            images: ['https://th.bing.com/th/id/OIP.GLI8S-uq-AegzJ2q-_2QqwHaFK?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://cdn.shoplightspeed.com/shops/665849/files/52884973/1652x1652x2/shimano-shimano-talavera-boat-spin-rod.jpg'],
             specs: {
                 category: 'Joran',
                 material: 'Fiberglass Composite',
@@ -1340,14 +1806,13 @@ const products = {
         },
         {
             id: 'p6',
-            emoji: '🎡',
             brand: 'Daiwa',
             title: 'Daiwa BG 5000',
             description: 'Reel tangguh anti karat cocok untuk laut',
             fullDescription: 'Daiwa BG 5000 adalah reel yang sangat tangguh dengan konstruksi anti karat. Dilengkapi dengan sistem drag yang halus dan kapasitas line yang besar untuk mancing di laut.',
             price: 2200000,
             rating: '⭐⭐⭐⭐⭐ 4.8/5 (300 review)',
-            images: ['🎡', '⚙️', '🌊', '🔩'],
+            images: ['https://www.game-fisher.com/25306-large_default/daiwa-bg-5000-h.jpg', 'https://th.bing.com/th/id/OIP.9rseGf-GZdcCYR6-s0JRZwHaIV?w=1494&h=1680&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Reel',
                 material: 'Aluminium Anti Karat',
@@ -1360,14 +1825,13 @@ const products = {
     joran: [
         {
             id: 'p2',
-            emoji: '🪝',
-            brand: 'Maguro',
-            title: 'Maguro Extreme',
-            description: 'Joran super kuat untuk laut dan sungai',
-            fullDescription: 'Joran Maguro Extreme dirancang khusus untuk menghadapi ikan-ikan besar di laut maupun sungai. Terbuat dari bahan carbon fiber berkualitas tinggi dengan kekuatan maksimal namun tetap ringan.',
-            price: 850000,
+            brand: 'Shimano',
+            title: 'Shimano Taigra',
+            description: 'Joran Trolling super kuat untuk laut dalam',
+            fullDescription: 'Joran Shimano Taigra dirancang khusus untuk menghadapi ikan-ikan besar di laut dalam. Terbuat dari bahan carbon fiber berkualitas tinggi dengan kekuatan maksimal.',
+            price: 18500000,
             rating: '⭐⭐⭐⭐ 4.7/5 (180 review)',
-            images: ['🪝', '🎣', '🌊', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.84iUXnfVNaI1W0JwL1kJCAHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://www.gerrysfishing.com/wp-content/uploads/2023/01/image383134700.jpg', 'https://th.bing.com/th/id/OIP.TKl4C-jOutS6-AFUqgh4rwHaHa?w=2560&h=2560&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://th.bing.com/th/id/OIP.zgRZadziKgiPlTe_ryt6rwHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Joran',
                 material: 'Carbon Fiber',
@@ -1378,14 +1842,14 @@ const products = {
         },
         {
             id: 'p4',
-            emoji: '🎏',
+            
             brand: 'Daiwa',
             title: 'Daiwa Saltiga',
             description: 'Joran kelas premium untuk mancing laut',
             fullDescription: 'Daiwa Saltiga adalah joran premium dengan sensitivitas tinggi dan kekuatan maksimal. Cocok untuk teknik casting maupun jigging di laut dengan ikan-ikan besar.',
             price: 1250000,
             rating: '⭐⭐⭐⭐⭐ 4.9/5 (150 review)',
-            images: ['🎏', '🌊', '🎣', '🐠'],
+            images: ['https://cdn.shopify.com/s/files/1/0711/3103/7995/products/saltiga-spin.jpg?v=1680631491&width=1445', 'https://discounttackle.com/cdn/shop/products/saltiga-spin-main_2260x1400.png?v=1631306299'],
             specs: {
                 category: 'Joran',
                 material: 'High Modulus Carbon',
@@ -1396,14 +1860,13 @@ const products = {
         },
         {
             id: 'p5',
-            emoji: '🎐',
             brand: 'Shimano',
             title: 'Shimano Talavera',
             description: 'Joran spinning ringan untuk pemula',
             fullDescription: 'Shimano Talavera adalah pilihan tepat untuk pemula yang ingin belajar teknik spinning. Ringan dan seimbang dengan harga terjangkau namun kualitas Shimano.',
-            price: 650000,
+            price: 1650000,
             rating: '⭐⭐⭐⭐ 4.5/5 (210 review)',
-            images: ['🎐', '🎣', '🌀', '🐡'],
+            images: ['https://th.bing.com/th/id/OIP.GLI8S-uq-AegzJ2q-_2QqwHaFK?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://cdn.shoplightspeed.com/shops/665849/files/52884973/1652x1652x2/shimano-shimano-talavera-boat-spin-rod.jpg'],
             specs: {
                 category: 'Joran',
                 material: 'Fiberglass Composite',
@@ -1414,14 +1877,13 @@ const products = {
         },
         {
             id: 'p13',
-            emoji: '🎣',
             brand: 'Penn',
             title: 'Penn Battalion',
             description: 'Joran heavy duty untuk ikan besar',
             fullDescription: 'Penn Battalion adalah joran heavy duty yang dirancang untuk menghadapi ikan-ikan besar seperti GT, Tuna, atau Marlin. Konstruksi kuat dengan action yang cepat.',
-            price: 950000,
+            price: 4950000,
             rating: '⭐⭐⭐⭐ 4.6/5 (120 review)',
-            images: ['🎣', '💪', '🌊', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.4_eFGH4zxD827p6fhLgakgHaEr?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://i5.walmartimages.com/asr/d74c011f-5e71-4c47-93d2-cf5a40684aec_1.1150eaef488f790a04cfb6b317e3a7d1.jpeg'],
             specs: {
                 category: 'Joran',
                 material: 'Carbon Composite',
@@ -1432,14 +1894,13 @@ const products = {
         },
         {
             id: 'p14',
-            emoji: '🦯',
             brand: 'Tica',
             title: 'Tica Dolphin',
             description: 'Joran telescopic praktis untuk dibawa',
             fullDescription: 'Tica Dolphin adalah joran telescopic yang praktis untuk dibawa traveling. Meski bisa dilipat hingga 50cm, kekuatannya tetap optimal untuk mancing di berbagai kondisi.',
-            price: 450000,
+            price: 6450000,
             rating: '⭐⭐⭐ 3.9/5 (85 review)',
-            images: ['🦯', '🎣', '🧳', '🐠'],
+            images: ['https://wasatchflyfishing.com/wp-content/uploads/2023/04/cts_cp7-768x1024.jpg', 'https://media.karousell.com/media/photos/products/2023/2/28/daiwa_phantom_surf_ex_450_fish_1677572280_34ec7c1c_progressive.jpg'],
             specs: {
                 category: 'Joran',
                 material: 'Fiberglass',
@@ -1450,14 +1911,13 @@ const products = {
         },
         {
             id: 'p15',
-            emoji: '🎋',
             brand: 'Shimano',
             title: 'Shimano Catana',
             description: 'Joran all-round untuk berbagai teknik',
             fullDescription: 'Shimano Catana adalah joran serbaguna yang cocok untuk berbagai teknik mancing. Kualitas Shimano dengan harga yang lebih terjangkau untuk pemula hingga menengah.',
-            price: 550000,
+            price: 9550000,
             rating: '⭐⭐⭐⭐ 4.3/5 (150 review)',
-            images: ['🎋', '🎣', '🌀', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.tSAJRlbmVU8JdAzkNUdmPwHaHa?pid=ImgDet&w=474&h=474&rs=1&cb=idpwebp2&o=7&rm=3', 'https://th.bing.com/th/id/OIP.Ou3xdRoKtBtb7B1eyVB4CgHaEK?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Joran',
                 material: 'Carbon Fiber',
@@ -1470,14 +1930,13 @@ const products = {
     reel: [
         {
             id: 'p1',
-            emoji: '🎣',
             brand: 'Shimano',
             title: 'Shimano BeastMaster',
-            description: 'Reel elektrik terbaik untuk laut dalam',
+            description: 'Reel elektrik terbaik untuk laut dalam dengan teknologi terkini',
             fullDescription: 'Shimano BeastMaster adalah reel elektrik terbaik di kelasnya dengan teknologi canggih untuk mancing laut dalam. Dilengkapi dengan sistem drag yang halus dan kuat, serta baterai tahan lama untuk sesi mancing yang panjang.',
             price: 15000000,
             rating: '⭐⭐⭐⭐⭐ 4.9/5 (220 review)',
-            images: ['🎣', '⚙️', '🔋', '🌊'],
+            images: ['https://www.tsourosmarine.gr/56450-thickbox_default/shimano-beastmaster-9000-electric-reel.jpg', 'https://th.bing.com/th/id/OIP.Dpz3sZiejx3iagYjMWtzHAHaHa?w=962&h=962&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://m.media-amazon.com/images/I/618audQ+gML.jpg', 'https://cdn11.bigcommerce.com/s-55834/images/stencil/1280x1280/products/1431/21085/shimano-beastmaster-electric-reel-handle-view__87650.1706140852.jpg?c=2'],
             specs: {
                 category: 'Reel Elektrik',
                 material: 'Aluminium Grade',
@@ -1488,14 +1947,13 @@ const products = {
         },
         {
             id: 'p6',
-            emoji: '🎡',
             brand: 'Daiwa',
             title: 'Daiwa BG 5000',
             description: 'Reel tangguh anti karat cocok untuk laut',
             fullDescription: 'Daiwa BG 5000 adalah reel yang sangat tangguh dengan konstruksi anti karat. Dilengkapi dengan sistem drag yang halus dan kapasitas line yang besar untuk mancing di laut.',
             price: 2200000,
             rating: '⭐⭐⭐⭐⭐ 4.8/5 (300 review)',
-            images: ['🎡', '⚙️', '🌊', '🔩'],
+            images: ['https://www.game-fisher.com/25306-large_default/daiwa-bg-5000-h.jpg', 'https://th.bing.com/th/id/OIP.9rseGf-GZdcCYR6-s0JRZwHaIV?w=1494&h=1680&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Reel',
                 material: 'Aluminium Anti Karat',
@@ -1506,14 +1964,13 @@ const products = {
         },
         {
             id: 'p7',
-            emoji: '🎢',
             brand: 'Penn',
             title: 'Penn International',
             description: 'Reel profesional untuk mancing besar',
             fullDescription: 'Penn International adalah reel profesional yang digunakan oleh para pemancing kelas dunia. Dengan konstruksi metal penuh dan sistem drag yang presisi, reel ini bisa menghadapi ikan-ikan terbesar.',
             price: 3500000,
             rating: '⭐⭐⭐⭐⭐ 5.0/5 (180 review)',
-            images: ['🎢', '💪', '🌊', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.epWGWe3vLZHFUM4jLXKf8wAAAA?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://th.bing.com/th/id/OIP.IiLhj-dO7oLHzJNKO2H45wAAAA?w=300&h=300&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Reel',
                 material: 'Aluminium & Stainless Steel',
@@ -1524,14 +1981,13 @@ const products = {
         },
         {
             id: 'p16',
-            emoji: '⚙️',
             brand: 'Shimano',
-            title: 'Shimano Stradic',
+            title: 'Shimano Stella',
             description: 'Reel spinning presisi untuk berbagai kondisi',
-            fullDescription: 'Shimano Stradic adalah reel spinning dengan presisi tinggi yang cocok untuk berbagai kondisi mancing. Dilengkapi dengan teknologi Hagane Body untuk kekuatan maksimal.',
-            price: 2800000,
+            fullDescription: 'Shimano Stella adalah reel spinning dengan presisi tinggi yang cocok untuk berbagai kondisi mancing. Dilengkapi dengan teknologi Hagane Body untuk kekuatan maksimal.',
+            price: 19800000,
             rating: '⭐⭐⭐⭐⭐ 4.9/5 (200 review)',
-            images: ['⚙️', '🌀', '🎣', '🐠'],
+            images: ['https://th.bing.com/th/id/OIP.UK6L343LKgumUyXggBc8VgHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://image.ec21.com/image/davidfishingreel/oimg_GC09713046_CA09713111/Shimano-Stella-SWB-STL10000SWBPG-Saltwater-Spinning-Reel.jpg'],
             specs: {
                 category: 'Reel Spinning',
                 material: 'Hagane Body',
@@ -1542,14 +1998,13 @@ const products = {
         },
         {
             id: 'p17',
-            emoji: '🔩',
             brand: 'Okuma',
             title: 'Okuma Ceymar',
             description: 'Reel spinning ekonomis dengan performa baik',
             fullDescription: 'Okuma Ceymar adalah reel spinning dengan harga ekonomis namun tetap memiliki performa yang baik. Cocok untuk pemula atau sebagai reel cadangan.',
             price: 850000,
             rating: '⭐⭐⭐⭐ 4.2/5 (95 review)',
-            images: ['🔩', '🌀', '🎣', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.YOVS9Ww-eAggbGeXHjAnrgHaE8?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://th.bing.com/th/id/OIP.tfwwp5lQbsJkEmLHsFtOHgHaHa?w=600&h=600&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Reel Spinning',
                 material: 'Grafite Composite',
@@ -1560,14 +2015,14 @@ const products = {
         },
         {
             id: 'p18',
-            emoji: '🔄',
+            
             brand: 'Abu Garcia',
             title: 'Abu Garcia Revo',
             description: 'Reel baitcasting presisi untuk teknik casting',
             fullDescription: 'Abu Garcia Revo adalah reel baitcasting dengan presisi tinggi untuk teknik casting. Dilengkapi dengan sistem braking yang bisa diatur sesuai kebutuhan.',
             price: 3200000,
             rating: '⭐⭐⭐⭐⭐ 4.8/5 (150 review)',
-            images: ['🔄', '🎣', '🌀', '🐠'],
+            images: ['https://th.bing.com/th/id/OIP.Uq42QoKwTUSYHBVodiJCowHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://i.tackledirect.com/images/img600/abu-garcia-revo-premier-spinning-reels.jpg'],
             specs: {
                 category: 'Reel Baitcasting',
                 material: 'Aluminium & Carbon',
@@ -1580,14 +2035,13 @@ const products = {
     aksesoris: [
         {
             id: 'p3',
-            emoji: '🎒',
             brand: 'Rapala',
             title: 'Tas Pancing Waterproof',
             description: 'Kapasitas besar, bahan anti air dan ringan',
             fullDescription: 'Tas pancing Rapala ini didesain khusus untuk para angler profesional. Dengan bahan waterproof dan kompartemen yang banyak, semua peralatan mancing Anda akan terlindungi dengan baik.',
             price: 480000,
             rating: '⭐⭐⭐⭐ 4.6/5 (97 review)',
-            images: ['🎒', '🛡️', '🧰', '🎣'],
+            images: ['https://www.hookedonline.com.au/assets/full/46002-1.jpg?20211110164410', 'https://th.bing.com/th/id/OIP.ULWasyKvtLe6_LrpIFSdtwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://www.rapala.eu/img/940/940/resize/catalog/product/5/d/5dba8jskg54ep478u2fiqtin50_b64fb6bf.png', 'https://th.bing.com/th/id/OIP.ItPtyPKrqCN5T8jK0qHg-wHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Aksesoris',
                 material: 'Nylon Waterproof',
@@ -1598,14 +2052,13 @@ const products = {
         },
         {
             id: 'p8',
-            emoji: '🧵',
             brand: 'PowerPro',
             title: 'Tali Pancing Braided',
             description: 'Tali super kuat diameter 0.30mm 150m',
             fullDescription: 'Tali braided PowerPro terkenal dengan kekuatannya yang tinggi dibanding diameternya yang kecil. Dengan warna yang tidak mudah pudar dan struktur yang halus untuk casting yang lebih jauh.',
             price: 350000,
             rating: '⭐⭐⭐⭐ 4.4/5 (120 review)',
-            images: ['🧵', '🎣', '🌀', '🐟'],
+            images: ['https://th.bing.com/th/id/OIP.OREJwQU-GKmo2JeFqv365gHaIO?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3', 'https://th.bing.com/th/id/OIP.pa6ySUwPUtOImhkiAo3XMgHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'],
             specs: {
                 category: 'Tali',
                 material: 'Spectra Fiber',
@@ -1616,14 +2069,13 @@ const products = {
         },
         {
             id: 'p9',
-            emoji: '🪝',
             brand: 'Mustad',
             title: 'Set Kail Premium',
             description: '10 kail berbagai ukuran untuk berbagai ikan',
             fullDescription: 'Set kail premium dari Mustad ini berisi 10 kail dengan berbagai ukuran dan tipe untuk menangkap berbagai jenis ikan. Terbuat dari baja berkualitas tinggi dengan lapisan anti karat.',
             price: 250000,
             rating: '⭐⭐⭐⭐ 4.3/5 (95 review)',
-            images: ['🪝', '🎣', '🐟', '🐠'],
+            images: ['https://cdn.sanity.io/images/54z632nj/mustad-fishing/2797e1c71ccdafa1b7aa0a9291a2fff6e8225a8f-5070x3380.jpg?w=3840&h=2560&auto=format'],
             specs: {
                 category: 'Kail',
                 material: 'Baja Anti Karat',
@@ -1634,14 +2086,13 @@ const products = {
         },
         {
             id: 'p19',
-            emoji: '🧤',
             brand: 'Shimano',
             title: 'Sarung Tangan Pancing',
             description: 'Sarung tangan untuk proteksi saat mancing',
             fullDescription: 'Sarung tangan pancing Shimano dirancang untuk melindungi tangan dari gesekan tali atau ikan yang bergerak. Nyaman dipakai dengan grip yang baik saat memegang ikan.',
             price: 180000,
             rating: '⭐⭐⭐⭐ 4.2/5 (60 review)',
-            images: ['🧤', '✋', '🎣', '🐟'],
+            images: ['https://down-id.img.susercontent.com/file/sg-11134201-22110-mww9hchjpckv17'],
             specs: {
                 category: 'Aksesoris',
                 material: 'Neoprene',
@@ -1659,7 +2110,7 @@ const products = {
             fullDescription: 'Topi pancing Columbia ini dilengkapi dengan proteksi UV 50+ untuk melindungi dari terik matahari saat mancing seharian. Desainnya ringan dan memiliki ventilasi yang baik.',
             price: 220000,
             rating: '⭐⭐⭐⭐ 4.5/5 (80 review)',
-            images: ['🧢', '☀️', '🎣', '🌊'],
+            images: ['https://media.karousell.com/media/photos/products/2023/11/26/columbia_hats_1700991911_94582c62_progressive'],
             specs: {
                 category: 'Aksesoris',
                 material: 'Polyester Quick Dry',
@@ -1670,14 +2121,13 @@ const products = {
         },
         {
             id: 'p21',
-            emoji: '🧳',
             brand: 'Plano',
             title: 'Kotak Peralatan Pancing',
             description: 'Kotak organizer untuk menyimpan peralatan',
             fullDescription: 'Kotak peralatan pancing Plano memiliki banyak kompartemen untuk menyimpan berbagai aksesoris pancing secara rapi. Bahan plastik tahan air dengan kunci yang aman.',
             price: 320000,
             rating: '⭐⭐⭐⭐ 4.3/5 (70 review)',
-            images: ['🧳', '🎣', '🧰', '🔒'],
+            images: ['https://th.bing.com/th/id/R.f5897a97a095f76c3ee3b6baabc2f80f?rik=ejbFsVp3WlebjQ&riu=http%3a%2f%2fimage.sportsmansguide.com%2fadimgs%2fl%2f2%2f225378_ts.jpg&ehk=ztRJI2YSGmfK79oMGufIsZGYTjYiJUDDxOeXNsC2QlI%3d&risl=&pid=ImgRaw&r=0'],
             specs: {
                 category: 'Aksesoris',
                 material: 'Plastik ABS',
@@ -1686,133 +2136,72 @@ const products = {
                 warranty: '6 bulan'
             }
         }
-    ],
-    promo: [
-        {
-            id: 'p10',
-            emoji: '🔥',
-            brand: 'Tica',
-            title: 'Tica Cybernetic Reel',
-            description: 'Diskon 30% sampai akhir bulan!',
-            fullDescription: 'Tica Cybernetic Reel adalah reel dengan teknologi terbaru yang biasanya dijual dengan harga premium. Kini tersedia dengan diskon 30% untuk periode promo terbatas!',
-            price: 999000,
-            originalPrice: 1500000,
-            rating: '⭐⭐⭐⭐⭐ 5.0/5 (51 review)',
-            images: ['🔥', '⚙️', '🎣', '💥'],
-            specs: {
-                category: 'Reel',
-                material: 'Aluminium',
-                length: 'N/A',
-                weight: '400g',
-                warranty: '1 tahun'
-            }
-        },
-        {
-            id: 'p11',
-            emoji: '🎯',
-            brand: 'Shimano',
-            title: 'Shimano Nexave',
-            description: 'Diskon 25% untuk pembelian hari ini',
-            fullDescription: 'Shimano Nexave adalah joran berkualitas dengan harga terjangkau. Kini tersedia dengan diskon 25% khusus untuk pembelian hari ini saja!',
-            price: 750000,
-            originalPrice: 1000000,
-            rating: '⭐⭐⭐⭐ 4.7/5 (88 review)',
-            images: ['🎯', '🎣', '💰', '🐟'],
-            specs: {
-                category: 'Joran',
-                material: 'Carbon Composite',
-                length: '2.1 meter',
-                weight: '250g',
-                warranty: '1 tahun'
-            }
-        },
-        {
-            id: 'p12',
-            emoji: '🎁',
-            brand: 'Daiwa',
-            title: 'Paket Starter Kit',
-            description: 'Joran + Reel + Aksesoris lengkap',
-            fullDescription: 'Paket starter kit dari Daiwa ini berisi semua yang Anda butuhkan untuk memulai hobi mancing: 1 joran, 1 reel, tas, dan berbagai aksesoris dasar. Hemat hingga 30% dibanding beli terpisah!',
-            price: 1850000,
-            originalPrice: 2500000,
-            rating: '⭐⭐⭐⭐⭐ 4.9/5 (65 review)',
-            images: ['🎁', '🎣', '🧰', '🐠'],
-            specs: {
-                category: 'Paket',
-                material: 'Berbagai Material',
-                length: 'Berbagai Ukuran',
-                weight: '2.5kg',
-                warranty: '1 tahun'
-            }
-        },
-        {
-            id: 'p22',
-            emoji: '💎',
-            brand: 'Penn',
-            title: 'Penn Battle Combo',
-            description: 'Diskon 20% untuk paket joran + reel',
-            fullDescription: 'Penn Battle Combo adalah paket lengkap joran dan reel yang cocok untuk berbagai teknik mancing. Kini tersedia dengan diskon 20% untuk pembelian paket!',
-            price: 2400000,
-            originalPrice: 3000000,
-            rating: '⭐⭐⭐⭐⭐ 4.8/5 (90 review)',
-            images: ['💎', '🎣', '⚙️', '🐟'],
-            specs: {
-                category: 'Paket',
-                material: 'Carbon & Aluminium',
-                length: '2.1 meter',
-                weight: '800g',
-                warranty: '1 tahun'
-            }
-        },
-        {
-            id: 'p23',
-            emoji: '🛍️',
-            brand: 'Shimano',
-            title: 'Shimano Sedona FI',
-            description: 'Reel spinning diskon 15% + gratis tas',
-            fullDescription: 'Shimano Sedona FI adalah reel spinning berkualitas dengan harga terjangkau. Kini dapat diskon 15% plus gratis tas pancing senilai Rp 150.000!',
-            price: 1275000,
-            originalPrice: 1500000,
-            rating: '⭐⭐⭐⭐ 4.6/5 (110 review)',
-            images: ['🛍️', '⚙️', '🎒', '🎣'],
-            specs: {
-                category: 'Reel Spinning',
-                material: 'Aluminium',
-                length: 'N/A',
-                weight: '300g',
-                warranty: '1 tahun'
-            }
-        },
-        {
-            id: 'p24',
-            emoji: '🎉',
-            brand: 'Maguro',
-            title: 'Maguro Starter Pack',
-            description: 'Paket hemat untuk pemula diskon 25%',
-            fullDescription: 'Maguro Starter Pack berisi semua kebutuhan dasar untuk pemula: joran, reel, tali, kail, dan aksesoris dasar. Hemat 25% dibanding beli terpisah!',
-            price: 1125000,
-            originalPrice: 1500000,
-            rating: '⭐⭐⭐⭐ 4.5/5 (75 review)',
-            images: ['🎉', '🎣', '🧰', '🐠'],
-            specs: {
-                category: 'Paket',
-                material: 'Berbagai Material',
-                length: 'Berbagai Ukuran',
-                weight: '2kg',
-                warranty: '6 bulan'
-            }
-        }
     ]
+    
 };
+
+// Shipping tracking statuses
+const trackingStatuses = [
+    {
+        id: 'ordered',
+        title: 'Pesanan Dikonfirmasi',
+        description: 'Pesanan Anda telah dikonfirmasi dan akan segera diproses',
+        icon: '📝'
+    },
+    {
+        id: 'processed',
+        title: 'Pesanan Diproses',
+        description: 'Pesanan sedang disiapkan dan dikemas',
+        icon: '📦'
+    },
+    {
+        id: 'shipped',
+        title: 'Paket Dikirim',
+        description: 'Paket telah diserahkan ke kurir dan dalam perjalanan',
+        icon: '🚚'
+    },
+    {
+        id: 'transit',
+        title: 'Dalam Perjalanan',
+        description: 'Paket sedang dalam perjalanan menuju kota tujuan',
+        icon: '🛣️'
+    },
+    {
+        id: 'arrived',
+        title: 'Tiba di Kota Tujuan',
+        description: 'Paket telah tiba di kota tujuan dan siap diantar',
+        icon: '🏪'
+    },
+    {
+        id: 'delivering',
+        title: 'Sedang Diantar',
+        description: 'Kurir sedang dalam perjalanan menuju alamat Anda',
+        icon: '🏃'
+    },
+    {
+        id: 'delivered',
+        title: 'Paket Diterima',
+        description: 'Paket telah berhasil diterima oleh penerima',
+        icon: '✅'
+    }
+];
 
 // Current state
 let currentCategory = 'beranda';
 let isLoginMode = true;
 let cartItems = [];
-let currentUser = null;
 let currentProduct = null;
 let isSearching = false;
 let searchQuery = '';
+let currentUser = null;
+
+// Shipping methods data
+const shippingMethods = {
+    jne: { name: "JNE Reguler", price: 25000, estimate: "2-3 hari" },
+    jnt: { name: "J&T Express", price: 30000, estimate: "1-2 hari" },
+    sicepat: { name: "SiCepat Same Day", price: 50000, estimate: "1 hari" },
+    pos: { name: "POS Kilat", price: 20000, estimate: "3-5 hari" }
+};
 
 // DOM elements
 const productsGrid = document.getElementById('productsGrid');
@@ -1830,9 +2219,26 @@ function init() {
     loadProducts(currentCategory);
     updateCart();
     
+    // Check for saved user
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+        currentUser = JSON.parse(savedUser);
+        showUserLoggedIn();
+    }
+    
+    // Check for saved cart
+    const savedCart = localStorage.getItem('cartItems');
+    if (savedCart) {
+        cartItems = JSON.parse(savedCart);
+        updateCart();
+    }
+    
     // Event listeners
     document.getElementById('authForm').addEventListener('submit', handleAuthSubmit);
     document.getElementById('paymentForm').addEventListener('submit', handlePaymentSubmit);
+    document.getElementById('profileForm').addEventListener('submit', handleProfileSubmit);
+    document.getElementById('passwordForm').addEventListener('submit', handlePasswordSubmit);
+    document.getElementById('shippingMethod').addEventListener('change', updateShippingCost);
     
     // Navigation links
     navLinks.forEach(link => {
@@ -1846,6 +2252,139 @@ function init() {
             showProductList();
         });
     });
+
+    // Add click handler for user avatar
+    document.getElementById('userAvatar').addEventListener('click', function(e) {
+        e.stopPropagation();
+        showProfile();
+    });
+}
+
+// Show user as logged in
+function showUserLoggedIn() {
+    document.getElementById('loginBtn').style.display = 'none';
+    document.getElementById('userInfo').style.display = 'flex';
+    document.getElementById('userName').textContent = currentUser.name;
+    
+    const userAvatar = document.getElementById('userAvatar');
+    userAvatar.textContent = currentUser.name.charAt(0).toUpperCase();
+    
+    if (currentUser.avatar) {
+        userAvatar.style.backgroundImage = `url(${currentUser.avatar})`;
+        userAvatar.style.backgroundSize = 'cover';
+        userAvatar.textContent = '';
+    }
+}
+
+// Generate tracking number
+function generateTrackingNumber(courier) {
+    const prefix = courier.toUpperCase();
+    const timestamp = Date.now().toString().slice(-6);
+    const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+    return `${prefix}${timestamp}${random}`;
+}
+
+// Generate order timeline
+function generateOrderTimeline(order) {
+    const timeline = [];
+    const baseDate = new Date(order.date);
+    
+    // Always add the first status (ordered)
+    timeline.push({
+        ...trackingStatuses[0],
+        date: baseDate,
+        completed: true
+    });
+
+    // Add subsequent statuses based on order age
+    const hoursSinceOrder = (Date.now() - baseDate.getTime()) / (1000 * 60 * 60);
+    
+    for (let i = 1; i < trackingStatuses.length; i++) {
+        const status = trackingStatuses[i];
+        const statusDate = new Date(baseDate.getTime() + (i * 6 * 60 * 60 * 1000)); // 6 hours apart
+        
+        let completed = false;
+        let current = false;
+        
+        if (order.status === 'delivered') {
+            completed = true;
+        } else if (hoursSinceOrder > (i * 6)) {
+            completed = true;
+        } else if (hoursSinceOrder > ((i - 1) * 6) && hoursSinceOrder <= (i * 6)) {
+            current = true;
+        }
+        
+        timeline.push({
+            ...status,
+            date: statusDate,
+            completed: completed,
+            current: current
+        });
+    }
+    
+    return timeline;
+}
+
+// Update shipping cost
+function updateShippingCost() {
+    const shippingMethod = document.getElementById('shippingMethod').value;
+    const shippingCostElement = document.getElementById('shippingCost');
+    const cartShippingElement = document.getElementById('cartShipping');
+    
+    if (shippingMethod && shippingMethods[shippingMethod]) {
+        const shipping = shippingMethods[shippingMethod];
+        shippingCostElement.textContent = `Rp ${formatPrice(shipping.price)} (${shipping.name} - ${shipping.estimate})`;
+        cartShippingElement.textContent = `Rp ${formatPrice(shipping.price)}`;
+    } else {
+        shippingCostElement.textContent = "Rp 25.000";
+        cartShippingElement.textContent = "Rp 25.000";
+    }
+    
+    updateOrderSummary();
+}
+
+// Update order summary
+function updateOrderSummary() {
+    const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const shippingMethod = document.getElementById('shippingMethod').value;
+    const shipping = shippingMethod ? shippingMethods[shippingMethod].price : 25000;
+    const discount = subtotal >= 5000000 ? subtotal * 0.1 : 0;
+    const total = subtotal + shipping - discount;
+    
+    // Update order items
+    const orderItemsContainer = document.getElementById('orderItems');
+    orderItemsContainer.innerHTML = '';
+    
+    cartItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'summary-item';
+        itemElement.innerHTML = `
+            <span>${item.title} (${item.quantity}x):</span>
+            <span>Rp ${formatPrice(item.price * item.quantity)}</span>
+        `;
+        orderItemsContainer.appendChild(itemElement);
+    });
+    
+    // Update shipping cost
+    const shippingCostElement = document.getElementById('shippingCost');
+    if (shippingMethod && shippingMethods[shippingMethod]) {
+        const shippingInfo = shippingMethods[shippingMethod];
+        shippingCostElement.textContent = `Rp ${formatPrice(shippingInfo.price)} (${shippingInfo.name} - ${shippingInfo.estimate})`;
+    } else {
+        shippingCostElement.textContent = `Rp ${formatPrice(shipping)}`;
+    }
+    
+    // Update discount
+    if (discount > 0) {
+        document.getElementById('discountContainer').style.display = 'flex';
+        document.getElementById('discountAmount').textContent = `-Rp ${formatPrice(discount)}`;
+    } else {
+        document.getElementById('discountContainer').style.display = 'none';
+    }
+    
+    // Update total
+    document.getElementById('totalPayment').textContent = `Rp ${formatPrice(total)}`;
+    document.getElementById('checkoutButton').innerHTML = `🛒 Buat Pesanan - Rp ${formatPrice(total)}`;
 }
 
 // Load products for a category or search results
@@ -1888,7 +2427,9 @@ function loadProducts(category) {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
-            <div class="product-image" onclick="showProductDetail('${product.id}')">${product.emoji}</div>
+            <div class="product-image" onclick="showProductDetail('${product.id}')">
+                <img src="${product.images[0]}" alt="${product.title}" style="width:100%; height:100%; object-fit:cover;">
+            </div>
             <div class="product-info">
                 <div class="product-brand">${product.brand}</div>
                 <div class="product-title" onclick="showProductDetail('${product.id}')">${product.title}</div>
@@ -1927,28 +2468,28 @@ function performSearch() {
 
 // Show product detail
 function showProductDetail(productId) {
-    // Find product in all categories
+    // Cari produk berdasarkan ID dari semua kategori
     let product = null;
     for (const category in products) {
         product = products[category].find(p => p.id === productId);
         if (product) break;
     }
-    
+
     if (!product) return;
-    
+
     currentProduct = product;
-    
-    // Update product detail view
+
+    // Isi informasi detail produk
     document.getElementById('detailTitle').textContent = product.title;
     document.getElementById('detailBrand').textContent = product.brand;
     document.getElementById('detailRating').textContent = product.rating;
     document.getElementById('detailPrice').textContent = `Rp ${formatPrice(product.price)}`;
     document.getElementById('detailDescription').textContent = product.fullDescription;
-    
-    // Handle original price and discount
+
+    // Harga asli & diskon
     const originalPriceEl = document.getElementById('detailOriginalPrice');
     const discountEl = document.getElementById('detailDiscount');
-    
+
     if (product.originalPrice) {
         originalPriceEl.textContent = `Rp ${formatPrice(product.originalPrice)}`;
         const discount = Math.round((1 - product.price / product.originalPrice) * 100);
@@ -1959,37 +2500,43 @@ function showProductDetail(productId) {
         originalPriceEl.style.display = 'none';
         discountEl.style.display = 'none';
     }
-    
-    // Update specs
+
+    // Spesifikasi produk
     document.getElementById('specCategory').textContent = product.specs.category;
     document.getElementById('specMaterial').textContent = product.specs.material;
     document.getElementById('specLength').textContent = product.specs.length;
     document.getElementById('specWeight').textContent = product.specs.weight;
     document.getElementById('specWarranty').textContent = product.specs.warranty;
-    
-    // Update images
+
+    // Gambar utama & thumbnail
     const mainImage = document.getElementById('mainImage');
     const thumbnailsContainer = document.getElementById('productThumbnails');
-    
-    mainImage.innerHTML = product.images[0];
+
+    // Set gambar utama dengan gambar pertama
+    mainImage.innerHTML = `<img src="${product.images[0]}" alt="${product.title}" style="width:100%; border-radius:12px;">`;
     thumbnailsContainer.innerHTML = '';
-    
-    product.images.forEach((img, index) => {
+
+    // Buat thumbnail untuk setiap gambar produk
+    product.images.forEach((imgSrc, index) => {
         const thumbnail = document.createElement('div');
         thumbnail.className = 'product-thumbnail' + (index === 0 ? ' active' : '');
-        thumbnail.innerHTML = img;
+        thumbnail.innerHTML = `<img src="${imgSrc}" alt="thumbnail ${index + 1}" style="width:100%; border-radius:8px; cursor:pointer;">`;
         thumbnail.onclick = () => {
-            mainImage.innerHTML = img;
+            mainImage.innerHTML = `<img src="${imgSrc}" alt="${product.title}" style="width:100%; border-radius:12px;">`;
+            // Hapus kelas active dari semua thumbnail
             document.querySelectorAll('.product-thumbnail').forEach(t => t.classList.remove('active'));
+            // Tambah kelas active ke thumbnail yang diklik
             thumbnail.classList.add('active');
         };
         thumbnailsContainer.appendChild(thumbnail);
     });
-    
-    // Show detail and hide list
+
+    // Tampilkan detail produk dan sembunyikan grid produk
     document.getElementById('productsGrid').style.display = 'none';
     productDetail.classList.add('active');
 }
+
+
 
 // Show product list
 function showProductList() {
@@ -2050,7 +2597,7 @@ function addToCart(productId) {
         cartItems.push({
             id: product.id,
             title: product.title,
-            emoji: product.emoji,
+            image: product.images[0], // Simpan gambar pertama produk
             price: product.price,
             quantity: 1
         });
@@ -2099,7 +2646,9 @@ function updateCart() {
             const cartItem = document.createElement('div');
             cartItem.className = 'cart-item';
             cartItem.innerHTML = `
-                <div class="cart-item-image">${item.emoji}</div>
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+                </div>
                 <div class="cart-item-info">
                     <div class="cart-item-title">${item.title}</div>
                     <div class="cart-item-price">Rp ${formatPrice(item.price)}</div>
@@ -2115,12 +2664,21 @@ function updateCart() {
         
         // Calculate totals
         const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        const shipping = 25000;
-        const discount = subtotal >= 5000000 ? subtotal * 0.1 : 0; // 10% discount if subtotal > 5jt
+        const shippingMethod = document.getElementById('shippingMethod').value;
+        const shipping = shippingMethod ? shippingMethods[shippingMethod].price : 25000;
+        const discount = subtotal >= 5000000 ? subtotal * 0.1 : 0;
         const total = subtotal + shipping - discount;
         
         document.getElementById('cartSubtotal').textContent = `Rp ${formatPrice(subtotal)}`;
         document.getElementById('cartShipping').textContent = `Rp ${formatPrice(shipping)}`;
+        
+        if (shippingMethod) {
+            document.getElementById('shippingMethodContainer').style.display = 'flex';
+            document.getElementById('cartShippingMethod').textContent = 
+                `${shippingMethods[shippingMethod].name} (${shippingMethods[shippingMethod].estimate})`;
+        } else {
+            document.getElementById('shippingMethodContainer').style.display = 'none';
+        }
         
         if (discount > 0) {
             document.getElementById('cartDiscountRow').style.display = 'flex';
@@ -2131,6 +2689,314 @@ function updateCart() {
         
         document.getElementById('cartTotal').textContent = `Rp ${formatPrice(total)}`;
     }
+}
+
+// Show profile modal
+function showProfile() {
+    if (!currentUser) {
+        openModal('authModal');
+        return;
+    }
+    
+    // Fill profile form with current user data
+    document.getElementById('profileName').value = currentUser.name || '';
+    document.getElementById('profileEmail').value = currentUser.email || '';
+    document.getElementById('profilePhone').value = currentUser.phone || '';
+    document.getElementById('profileAddress').value = currentUser.address || '';
+    document.querySelector(`input[name="gender"][value="${currentUser.gender || 'male'}"]`).checked = true;
+    
+    // Update profile avatar
+    const profileAvatar = document.getElementById('profileAvatar');
+    profileAvatar.textContent = currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U';
+    
+    if (currentUser.avatar) {
+        profileAvatar.style.backgroundImage = `url(${currentUser.avatar})`;
+        profileAvatar.style.backgroundSize = 'cover';
+        profileAvatar.textContent = '';
+    }
+    
+    // Update profile stats
+    const orders = currentUser.orders || [];
+    const totalOrders = orders.length;
+    const totalSpent = orders.reduce((sum, order) => {
+        const orderTotal = order.items.reduce((itemSum, item) => itemSum + (item.price * item.quantity), 0);
+        return sum + orderTotal + (order.shipping ? order.shipping.cost : 25000);
+    }, 0);
+    
+    document.getElementById('totalOrders').textContent = totalOrders;
+    document.getElementById('totalSpent').textContent = `Rp ${formatPrice(totalSpent)}`;
+    
+    // Update order history
+    updateOrderHistory();
+    
+    openModal('profileModal');
+}
+
+// Update order history display
+function updateOrderHistory() {
+    const orderHistoryContainer = document.getElementById('orderHistoryContainer');
+    const orders = currentUser.orders || [];
+    
+    if (orders.length === 0) {
+        orderHistoryContainer.innerHTML = '<div style="text-align: center; padding: 2rem; color: #666;">Belum ada pesanan</div>';
+        return;
+    }
+    
+    orderHistoryContainer.innerHTML = '';
+    
+    // Sort orders by date (newest first)
+    orders.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    orders.forEach(order => {
+        const orderElement = document.createElement('div');
+        orderElement.className = 'order-item';
+        orderElement.onclick = () => showOrderDetail(order.id);
+        
+        const orderDate = new Date(order.date).toLocaleDateString('id-ID', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+        
+        const orderTotal = order.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const totalWithShipping = orderTotal + (order.shipping ? order.shipping.cost : 25000);
+        
+        // Determine status
+        let statusClass = 'processing';
+        let statusText = 'Diproses';
+        
+        const hoursSinceOrder = (Date.now() - new Date(order.date).getTime()) / (1000 * 60 * 60);
+        
+        if (hoursSinceOrder > 48) {
+            statusClass = 'delivered';
+            statusText = 'Selesai';
+        } else if (hoursSinceOrder > 24) {
+            statusClass = 'shipped';
+            statusText = 'Dikirim';
+        }
+        
+        orderElement.innerHTML = `
+            <div class="order-header">
+                <div>
+                    <strong>Pesanan #${order.id}</strong>
+                    <div class="order-date">${orderDate}</div>
+                </div>
+                <div class="order-status ${statusClass}">${statusText}</div>
+            </div>
+            <div class="order-products">
+                ${order.items.map(item => `${item.title} (${item.quantity}x)`).join(', ')}
+            </div>
+            <div class="order-total">Total: Rp ${formatPrice(totalWithShipping)}</div>
+            <div class="order-resi">Resi: ${order.trackingNumber || 'Belum tersedia'}</div>
+        `;
+        
+        orderHistoryContainer.appendChild(orderElement);
+    });
+}
+
+// Show order detail modal
+function showOrderDetail(orderId) {
+    const order = currentUser.orders.find(o => o.id === orderId);
+    if (!order) return;
+    
+    // Update order detail info
+    document.getElementById('orderDetailId').textContent = `#${order.id}`;
+    document.getElementById('orderDetailDate').textContent = new Date(order.date).toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    document.getElementById('orderDetailResi').textContent = order.trackingNumber || 'Belum tersedia';
+    
+    // Calculate total
+    const orderTotal = order.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const totalWithShipping = orderTotal + (order.shipping ? order.shipping.cost : 25000);
+    document.getElementById('orderDetailTotal').textContent = `Rp ${formatPrice(totalWithShipping)}`;
+    
+    // Update status
+    const hoursSinceOrder = (Date.now() - new Date(order.date).getTime()) / (1000 * 60 * 60);
+    let statusClass = 'processing';
+    let statusText = 'Diproses';
+    
+    if (hoursSinceOrder > 48) {
+        statusClass = 'delivered';
+        statusText = 'Selesai';
+    } else if (hoursSinceOrder > 24) {
+        statusClass = 'shipped';
+        statusText = 'Dikirim';
+    }
+    
+    const statusElement = document.getElementById('orderDetailStatus');
+    statusElement.className = `order-status ${statusClass}`;
+    statusElement.textContent = statusText;
+    
+    // Update shipping info
+    document.getElementById('shippingCourier').textContent = order.shipping ? order.shipping.method : 'JNE Regular';
+    document.getElementById('shippingAddress').textContent = order.shipping ? order.shipping.address : 'Alamat tidak tersedia';
+    
+    // Update estimate date
+    const estimateDate = new Date(order.date);
+    estimateDate.setDate(estimateDate.getDate() + 3); // Add 3 days
+    document.getElementById('estimateDate').textContent = estimateDate.toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+    
+    // Update tracking timeline
+    const timeline = generateOrderTimeline(order);
+    const timelineContainer = document.getElementById('trackingTimelineContainer');
+    timelineContainer.innerHTML = '';
+    
+    timeline.forEach(item => {
+        const timelineElement = document.createElement('div');
+        timelineElement.className = `timeline-item ${item.completed ? 'active' : ''} ${item.current ? 'current' : ''}`;
+        
+        const timelineDate = item.date.toLocaleDateString('id-ID', {
+            day: 'numeric',
+            month: 'short',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        timelineElement.innerHTML = `
+            <div class="timeline-icon ${item.completed ? 'active' : ''} ${item.current ? 'current' : ''}">${item.icon}</div>
+            <div class="timeline-content">
+                <div class="timeline-title">${item.title}</div>
+                <div class="timeline-description">${item.description}</div>
+                <div class="timeline-date">${item.completed || item.current ? timelineDate : ''}</div>
+            </div>
+        `;
+        
+        timelineContainer.appendChild(timelineElement);
+    });
+    
+    // Update order items
+    const orderItemsContainer = document.getElementById('orderDetailItems');
+    orderItemsContainer.innerHTML = '';
+    
+    order.items.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'summary-item';
+        itemElement.innerHTML = `
+            <span>${item.title} (${item.quantity}x):</span>
+            <span>Rp ${formatPrice(item.price * item.quantity)}</span>
+        `;
+        orderItemsContainer.appendChild(itemElement);
+    });
+    
+    // Add shipping cost
+    const shippingElement = document.createElement('div');
+    shippingElement.className = 'summary-item';
+    shippingElement.innerHTML = `
+        <span>Ongkos Kirim:</span>
+        <span>Rp ${formatPrice(order.shipping ? order.shipping.cost : 25000)}</span>
+    `;
+    orderItemsContainer.appendChild(shippingElement);
+    
+    // Add total
+    const totalElement = document.createElement('div');
+    totalElement.className = 'summary-item summary-total';
+    totalElement.innerHTML = `
+        <span>Total:</span>
+        <span>Rp ${formatPrice(totalWithShipping)}</span>
+    `;
+    orderItemsContainer.appendChild(totalElement);
+    
+    closeModal('profileModal');
+    openModal('orderDetailModal');
+}
+
+// Show change password modal
+function showChangePassword() {
+    closeModal('profileModal');
+    openModal('passwordModal');
+}
+
+// Handle avatar upload
+function handleAvatarUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        currentUser.avatar = e.target.result;
+        
+        // Update profile avatar
+        const profileAvatar = document.getElementById('profileAvatar');
+        profileAvatar.style.backgroundImage = `url(${e.target.result})`;
+        profileAvatar.style.backgroundSize = 'cover';
+        profileAvatar.textContent = '';
+        
+        // Update header avatar
+        const headerAvatar = document.getElementById('userAvatar');
+        headerAvatar.style.backgroundImage = `url(${e.target.result})`;
+        headerAvatar.style.backgroundSize = 'cover';
+        headerAvatar.textContent = '';
+        
+        // Save to localStorage
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    };
+    reader.readAsDataURL(file);
+}
+
+// Handle profile form submission
+function handleProfileSubmit(e) {
+    e.preventDefault();
+    
+    // Update user data
+    currentUser.name = document.getElementById('profileName').value;
+    currentUser.email = document.getElementById('profileEmail').value;
+    currentUser.phone = document.getElementById('profilePhone').value;
+    currentUser.address = document.getElementById('profileAddress').value;
+    currentUser.gender = document.querySelector('input[name="gender"]:checked').value;
+    
+    // Update UI
+    document.getElementById('userName').textContent = currentUser.name;
+    const userAvatar = document.getElementById('userAvatar');
+    userAvatar.textContent = currentUser.name.charAt(0).toUpperCase();
+    
+    if (currentUser.avatar) {
+        userAvatar.style.backgroundImage = `url(${currentUser.avatar})`;
+        userAvatar.style.backgroundSize = 'cover';
+        userAvatar.textContent = '';
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+    showToast('Profil berhasil diperbarui');
+    closeModal('profileModal');
+}
+
+// Handle password form submission
+function handlePasswordSubmit(e) {
+    e.preventDefault();
+    
+    const oldPassword = document.getElementById('oldPassword').value;
+    const newPassword = document.getElementById('newPassword').value;
+    const confirmPassword = document.getElementById('confirmNewPassword').value;
+    
+    // Simple validation
+    if (newPassword !== confirmPassword) {
+        showToast('Konfirmasi password tidak cocok');
+        return;
+    }
+    
+    if (newPassword.length < 6) {
+        showToast('Password baru minimal 6 karakter');
+        return;
+    }
+    
+    // Update password (in real app, this would be sent to server)
+    currentUser.password = newPassword;
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+    showToast('Password berhasil diubah');
+    closeModal('passwordModal');
+    showProfile();
 }
 
 // Show toast notification
@@ -2200,37 +3066,17 @@ function openCheckoutModal() {
         return;
     }
     
-    // Calculate order summary
-    const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const shipping = 25000;
-    const discount = subtotal >= 5000000 ? subtotal * 0.1 : 0;
-    const total = subtotal + shipping - discount;
-    
-    // Update order summary in modal
-    const orderItemsContainer = document.getElementById('orderItems');
-    orderItemsContainer.innerHTML = '';
-    
-    cartItems.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'summary-item';
-        itemElement.innerHTML = `
-            <span>${item.title} (${item.quantity}x):</span>
-            <span>Rp ${formatPrice(item.price * item.quantity)}</span>
-        `;
-        orderItemsContainer.appendChild(itemElement);
-    });
-    
-    document.getElementById('shippingCost').textContent = `Rp ${formatPrice(shipping)}`;
-    
-    if (discount > 0) {
-        document.getElementById('discountContainer').style.display = 'flex';
-        document.getElementById('discountAmount').textContent = `-Rp ${formatPrice(discount)}`;
-    } else {
-        document.getElementById('discountContainer').style.display = 'none';
+    // Pre-fill shipping info from profile if available
+    if (currentUser.address) {
+        document.getElementById('address').value = currentUser.address;
     }
+    if (currentUser.phone) {
+        document.getElementById('phone').value = currentUser.phone;
+    }
+    document.getElementById('receiverName').value = currentUser.name;
     
-    document.getElementById('totalPayment').textContent = `Rp ${formatPrice(total)}`;
-    document.getElementById('checkoutButton').innerHTML = `🛒 Buat Pesanan - Rp ${formatPrice(total)}`;
+    // Update order summary
+    updateOrderSummary();
     
     openModal('paymentModal');
 }
@@ -2238,48 +3084,127 @@ function openCheckoutModal() {
 // Auth functions
 function handleAuthSubmit(e) {
     e.preventDefault();
+    
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
-    // Simple validation
-    if (!email || !password) {
-        alert('Harap isi email dan password');
-        return;
-    }
-    
-    if (!isLoginMode) {
+    if (isLoginMode) {
+        // Login logic
+        const savedUser = localStorage.getItem('registeredUser_' + email);
+        if (savedUser) {
+            const userData = JSON.parse(savedUser);
+            if (userData.password === password) {
+                currentUser = userData;
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                showUserLoggedIn();
+                closeModal('authModal');
+                showToast(`Selamat datang, ${currentUser.name}!`);
+            } else {
+                showToast('Password salah');
+            }
+        } else {
+            showToast('Email tidak terdaftar');
+        }
+    } else {
+        // Register logic
         const fullName = document.getElementById('fullName').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
         
-        if (!fullName) {
-            alert('Harap isi nama lengkap');
+        if (password !== confirmPassword) {
+            showToast('Konfirmasi password tidak cocok');
             return;
         }
         
-        if (password !== confirmPassword) {
-            alert('Password dan konfirmasi password tidak cocok');
+        if (password.length < 6) {
+            showToast('Password minimal 6 karakter');
             return;
         }
+        
+        currentUser = {
+            name: fullName,
+            email: email,
+            password: password,
+            phone: '',
+            address: '',
+            gender: 'male',
+            avatar: '',
+            orders: [],
+            joinDate: new Date()
+        };
+        
+        localStorage.setItem('registeredUser_' + email, JSON.stringify(currentUser));
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        showUserLoggedIn();
+        closeModal('authModal');
+        showToast(`Selamat datang, ${currentUser.name}! Akun berhasil dibuat.`);
+    }
+}
+
+function handlePaymentSubmit(e) {
+    e.preventDefault();
+    
+    // Validate form
+    const receiverName = document.getElementById('receiverName').value;
+    const address = document.getElementById('address').value;
+    const phone = document.getElementById('phone').value;
+    const shippingMethod = document.getElementById('shippingMethod').value;
+    const shippingNotes = document.getElementById('shippingNotes').value;
+    
+    if (!receiverName || !address || !phone || !shippingMethod) {
+        showToast('Harap lengkapi semua informasi pengiriman');
+        return;
     }
     
-    // Simulate successful login
-    currentUser = {
-        email,
-        name: isLoginMode ? email.split('@')[0] : document.getElementById('fullName').value
+    if (!document.querySelector('input[name="payment"]:checked')) {
+        showToast('Harap pilih metode pembayaran');
+        return;
+    }
+    
+    const selectedShipping = shippingMethods[shippingMethod];
+    const courier = shippingMethod.toUpperCase();
+    
+    // Create order object
+    const order = {
+        id: Date.now(),
+        date: new Date(),
+        items: [...cartItems],
+        shipping: {
+            method: selectedShipping.name,
+            cost: selectedShipping.price,
+            estimate: selectedShipping.estimate,
+            address: address,
+            phone: phone,
+            notes: shippingNotes
+        },
+        payment: document.querySelector('input[name="payment"]:checked').value,
+        status: 'processing',
+        trackingNumber: generateTrackingNumber(courier)
     };
     
-    document.getElementById('loginBtn').style.display = 'none';
-    document.getElementById('userInfo').style.display = 'flex';
-    document.getElementById('userName').textContent = currentUser.name;
-    document.getElementById('userAvatar').textContent = currentUser.name.charAt(0).toUpperCase();
-    closeModal('authModal');
-    
-    // Load cart from localStorage
-    const savedCart = localStorage.getItem('cartItems');
-    if (savedCart) {
-        cartItems = JSON.parse(savedCart);
-        updateCart();
+    // Save order to user's order history
+    if (!currentUser.orders) {
+        currentUser.orders = [];
     }
+    currentUser.orders.push(order);
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+    
+    // Simulate payment processing
+    setTimeout(() => {
+        // Clear cart
+        cartItems = [];
+        updateCart();
+        localStorage.removeItem('cartItems');
+        
+        closeModal('paymentModal');
+        switchTab('products');
+        
+        // Show order confirmation
+        showToast(`Pesanan berhasil dibuat!\nNo. Pesanan: #${order.id}\nNo. Resi: ${order.trackingNumber}\nEstimasi: ${order.shipping.estimate}`);
+    }, 2000);
 }
 
 function switchAuthMode() {
@@ -2297,56 +3222,50 @@ function logout() {
     currentUser = null;
     document.getElementById('userInfo').style.display = 'none';
     document.getElementById('loginBtn').style.display = 'inline-block';
+    localStorage.removeItem('currentUser');
+    
+    // Clear cart
+    cartItems = [];
+    updateCart();
+    localStorage.removeItem('cartItems');
+    
+    showToast('Anda telah logout');
 }
-
-// Payment submission
-function handlePaymentSubmit(e) {
-    e.preventDefault();
+function buyNow() {
+    if (!currentProduct) return;
     
-    // Validate form
-    const receiverName = document.getElementById('receiverName').value;
-    const address = document.getElementById('address').value;
-    const phone = document.getElementById('phone').value;
+    // Clear cart and add current product
+    cartItems = [{
+        id: currentProduct.id,
+        title: currentProduct.title,
+        image: currentProduct.images[0], // Simpan gambar produk
+        price: currentProduct.price,
+        quantity: 1
+    }];
     
-    if (!receiverName || !address || !phone) {
-        alert('Harap lengkapi semua informasi pengiriman');
-        return;
-    }
-    
-    if (!document.querySelector('input[name="payment"]:checked')) {
-        alert('Harap pilih metode pembayaran');
-        return;
-    }
-    
-    // Show success message
-    document.getElementById('successMessage').style.display = 'block';
-    
-    // Simulate payment processing
-    setTimeout(() => {
-        // Clear cart
-        cartItems = [];
-        updateCart();
-        localStorage.removeItem('cartItems');
-        
-        closeModal('paymentModal');
-        switchTab('products');
-        
-        // Show order confirmation
-        alert(`Pembayaran berhasil diproses!\n\nTerima kasih ${currentUser.name} telah berbelanja di FishingPro Store.\n\nPesanan akan dikirim ke:\n${address}\n\nNomor telepon: ${phone}`);
-    }, 2000);
+    updateCart();
+    openCheckoutModal();
+    showProductList();
+    switchTab('cart');
 }
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
     init();
-    
-    // Check if there's saved cart for anonymous user
-    const savedCart = localStorage.getItem('cartItems');
-    if (savedCart) {
-        cartItems = JSON.parse(savedCart);
-        updateCart();
-    }
 });
+
+// Add CSS for fade animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+        10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    }
+`;
+document.head.appendChild(style);
+
 </script>
 </body>
 </html>
